@@ -1,13 +1,13 @@
 
 import java.util.ArrayList;
 
-
 public class Traductor {
 
     PilaArrayList<String> pila = new PilaArrayList<>();
    
     public int precedence(char operator) {
         return switch (operator) {
+            case '^' -> 3;
             case '*', '/' -> 2;
             case '+', '-' -> 1;
             default -> 0;

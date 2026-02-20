@@ -16,7 +16,7 @@ public class PilaArrayList<T> implements PilaInterface<T>{
     @Override
     public T pop(){
         if (items.isEmpty()) {
-            throw new EmptyStackException("No se puede hacer pop de una pila vacía");
+            throw new RuntimeException("No se puede hacer pop de una pila vacía");
         }
         
         int lastIndex = items.size() - 1;
@@ -28,7 +28,7 @@ public class PilaArrayList<T> implements PilaInterface<T>{
     @Override
     public T peek(){
         if (items.isEmpty()) {
-            throw new EmptyStackException("No se puede hacer peek de una pila vacía");
+            throw new RuntimeException("No se puede hacer peek de una pila vacía");
         }
 
         int lastIndex = items.size() - 1;

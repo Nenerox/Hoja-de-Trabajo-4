@@ -2,29 +2,30 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+
 /**
  * Clase utilitaria para la lectura y escritura de archivos de texto.
  *
  * Permite leer expresiones desde un archivo y escribir
  * el resultado final de la calculadora.
  */
-public class txtManager {
+public class TxtManager {
 
     /**
-     * Lee el contenido de un archivo y lo separa por espacios.
+     * Lee el contenido de un archivo y elimina todos los espacios.
      *
      * @param filePath ruta del archivo a leer
-     * @return arreglo de Strings con los elementos leídos;
-     *         arreglo vacío si ocurre un error
+     * @return String sin espacios;
+     *         cadena vacía si ocurre un error
      */
-    public String[] getArray(String filePath) {
+    public String getString(String filePath) {
         try {
             return Files.readString(Path.of(filePath))
                         .trim()
-                        .split(" ");
+                        .replaceAll("\\s+", "");
         } catch (IOException e) {
             System.err.println("Error al leer el archivo: " + e.getMessage());
-            return new String[0];
+            return "";
         }
     }
 

@@ -14,7 +14,7 @@ public class main {
         // System.out.println(Postif);
 
         System.out.println("Escoga el tipo de Pila que desea utilizar");
-        System.out.println("1. ArrayList \n2. Vector \n3. Lista");
+    System.out.println("1. ArrayList \n2. Vector \n3. Lista \n4. Salir");
         int opcion = scanner.nextInt();
         String tipo;
         switch (opcion) {
@@ -26,6 +26,10 @@ public class main {
                 break;
             case 3:
                 tipo = "lista";
+                break;
+            case 4:
+                System.out.println("Saliendo del sistema...");
+                tipo = null;
                 break;
             default:
                 tipo = null;

@@ -19,7 +19,7 @@ public class LinkedList<T> implements ListaInterface<T> {
         Nodo<T> nuevo = new Nodo<>(valor);
         if(isEmpty())
         {
-            head = tail;
+            head = nuevo;
             tail = nuevo;
         }
         else{
@@ -39,7 +39,7 @@ public class LinkedList<T> implements ListaInterface<T> {
         if(head == tail)
         {
             valor = head.dato;
-            head = tail;
+            head = null;
             tail = null;
         }
         else{

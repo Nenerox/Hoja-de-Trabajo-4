@@ -16,7 +16,7 @@ public class DoubleLinkedList<T> implements ListaInterface<T> {
     }
 
     @Override
-    public void añadirUltimo(T elemento) {
+    public void add(T elemento) {
         NodoDoble<T> nuevo = new NodoDoble<>(elemento);
 
         if (isEmpty()) {
@@ -31,7 +31,7 @@ public class DoubleLinkedList<T> implements ListaInterface<T> {
     }
 
     @Override
-    public T quitarUltimo() {
+    public T removeLast() {
         if (isEmpty()) {
             throw new RuntimeException("Lista vacía");
         }
@@ -50,7 +50,7 @@ public class DoubleLinkedList<T> implements ListaInterface<T> {
     }
 
     @Override
-    public T obtenerUltimo() {
+    public T getLast() {
         if (isEmpty()) {
             throw new RuntimeException("Lista vacía");
         }

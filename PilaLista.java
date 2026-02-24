@@ -9,7 +9,7 @@ public class PilaLista<T> implements PilaInterface<T> {
 
     @Override
     public void push(T elemento) {
-        lista.añadirUltimo(elemento);
+        lista.add(elemento);
         size++;
     }
 
@@ -19,7 +19,7 @@ public class PilaLista<T> implements PilaInterface<T> {
             throw new RuntimeException("Pila vacía");
 
         size--;
-        return lista.quitarUltimo();
+        return lista.removeLast();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class PilaLista<T> implements PilaInterface<T> {
         if (isEmpty())
             throw new RuntimeException("Pila vacía");
 
-        return lista.obtenerUltimo();
+        return lista.getLast();
     }
     @Override
     public boolean isEmpty()

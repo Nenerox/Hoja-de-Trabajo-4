@@ -1,7 +1,7 @@
 public interface ListaInterface<T> {
-    void añadirUltimo(T valor);
-    T quitarUltimo();    
-    T obtenerUltimo();
+    void add(T valor);
+    T removeLast();    
+    T getLast();
     boolean isEmpty();
     int size();
 }

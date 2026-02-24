@@ -14,7 +14,7 @@ public class LinkedList<T> implements ListaInterface<T> {
         return size;
     }
     @Override
-    public void añadirUltimo(T valor)
+    public void add(T valor)
     {
         Nodo<T> nuevo = new Nodo<>(valor);
         if(isEmpty())
@@ -29,7 +29,7 @@ public class LinkedList<T> implements ListaInterface<T> {
         size++;
     }
     @Override
-    public T quitarUltimo()
+    public T removeLast()
     {
         if(isEmpty())
         {
@@ -56,7 +56,7 @@ public class LinkedList<T> implements ListaInterface<T> {
         return valor;
     }
     @Override
-    public T obtenerUltimo()
+    public T getLast()
     {
         if(isEmpty())
         {

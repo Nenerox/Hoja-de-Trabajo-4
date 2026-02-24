@@ -1,5 +1,5 @@
 /**
- * Implementación de una pila utilizando {@link java.util.Vector}.
+ * Implementación de una pila utilizando un vector.
  *
  * @param <T> tipo de elementos almacenados
  */

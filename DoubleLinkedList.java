@@ -1,20 +1,46 @@
+/**
+ * Implementación de una lista doblemente enlazada genérica.
+ * 
+ * @param <T> Tipo de dato que almacenará la lista.
+ */
 public class DoubleLinkedList<T> implements ListaInterface<T> {
 
+    /** Primer nodo de la lista */
     private NodoDoble<T> head;
+
+    /** Último nodo de la lista */
     private NodoDoble<T> tail;
+
+    /** Cantidad de elementos en la lista */
     private int size = 0;
 
+    /**
+     * Verifica si la lista está vacía.
+     *
+     * @return true si la lista no contiene elementos, false en caso contrario.
+     */
     @Override
     public boolean isEmpty()
     {
         return size == 0;
     }
+
+    /**
+     * Devuelve el número de elementos en la lista.
+     *
+     * @return tamaño actual de la lista.
+     */
     @Override
     public int size()
     {
         return size;
     }
 
+    /**
+     * Agrega un elemento al final de la lista.
+     *
+     * @param elemento elemento a agregar.
+     */
     @Override
     public void add(T elemento) {
         NodoDoble<T> nuevo = new NodoDoble<>(elemento);
@@ -30,6 +56,12 @@ public class DoubleLinkedList<T> implements ListaInterface<T> {
         size++;
     }
 
+    /**
+     * Elimina y devuelve el último elemento de la lista.
+     *
+     * @return el último elemento de la lista.
+     * @throws RuntimeException si la lista está vacía.
+     */
     @Override
     public T removeLast() {
         if (isEmpty()) {
@@ -49,6 +81,12 @@ public class DoubleLinkedList<T> implements ListaInterface<T> {
         return valor;
     }
 
+    /**
+     * Devuelve el último elemento de la lista sin eliminarlo.
+     *
+     * @return el último elemento.
+     * @throws RuntimeException si la lista está vacía.
+     */
     @Override
     public T getLast() {
         if (isEmpty()) {

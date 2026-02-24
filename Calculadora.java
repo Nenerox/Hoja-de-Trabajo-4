@@ -35,10 +35,6 @@ public class Calculadora {
      */
 
     public double operate(String input) {
-        if (input.length() != 1) {
-            pila.push(Double.NaN);
-            return Double.NaN;
-        }
 
         char inputChar = input.charAt(0);
 
@@ -47,7 +43,7 @@ public class Calculadora {
             return pila.peek();
 
         } else if (input.equals("+") || input.equals("-")
-                || input.equals("*") || input.equals("/")) {
+                || input.equals("*") || input.equals("/") || input.equals("^")) {
 
             double b = pila.pop();
             double a = pila.pop();
@@ -62,11 +58,11 @@ public class Calculadora {
                 case "-" -> pila.push(a - b);
                 case "*" -> pila.push(a * b);
                 case "/" -> pila.push(a / b);
+                case "^" -> pila.push(Math.pow(a, b));
             }
 
             return pila.peek();
         }
-
         pila.push(Double.NaN);
         return Double.NaN;
     }

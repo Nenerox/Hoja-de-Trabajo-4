@@ -50,7 +50,9 @@ public class main {
         }
     
         PilaInterface<Double> pila = factory.createPila(tipo);   
-        Calculadora calc = new Calculadora(pila);
+        
+        Calculadora calc = Calculadora.getInstance();
+        calc.setPila(pila);
 
         for (String input : Postif) {
             Double resultado = calc.operate(input);

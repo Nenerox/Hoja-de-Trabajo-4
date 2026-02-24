@@ -7,15 +7,43 @@ public class Calculadora {
     /** Pila utilizada para los cálculos */
     private PilaInterface<Double> pila;
 
+    /** Instancia unica de la clase Calculadora Singleton */
+    private static Calculadora instancia;
+
     /**
-     * Construye una calculadora con la pila dada.
+     * Constructor privado de la clase Calculadora
      *
-     * <p><b>Pre:</b> {@code pila} no es null.</p>
-     * <p><b>Post:</b> La calculadora queda asociada a la pila.</p>
-     *
-     * @param pila pila de operandos
+     * Se hace privado para que otras clases no puedan Crear nuevas instancias con new 
+     * Esto garantiza que la creacion del objeto sea exclusivamente por el metodo getInstance()
+     * 
      */
-    public Calculadora(PilaInterface<Double> pila) {
+
+    private Calculadora() {}
+
+    /**
+     * Retorna la unica instancia de la Clase 
+     *
+     * Si la instancia no ha sido creada este la crea
+     * En caso contrario devuelve la instancia ya creada
+     * 
+     * @return la unica instancia de Calculadora.
+     */
+
+    public static Calculadora getInstance() {
+        if (instancia == null) {
+            instancia = new Calculadora();
+        }
+        return instancia;
+    }
+    /**
+     * Establece la implementacion de pila que se utilizara 
+     *
+     * Permite asignar la pila que se utilizara para las operaciones proporcionada por el uso de factory
+     * Este metodo es necesario ya que no se permite recibir la pila a traves del constructor al ser Singleton
+     * 
+     * @param pila El tipo de pila que sera utilizado por la calculadora
+     */
+    public void setPila(PilaInterface<Double> pila){
         this.pila = pila;
     }
 

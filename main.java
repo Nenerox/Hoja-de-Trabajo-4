@@ -9,7 +9,7 @@ public class main {
         PilaFactory factory = new PilaFactory();
         TxtManager manager = new TxtManager();
 
-        String datos = manager.getString("infix.txt");
+        String datos = manager.getString("datos.txt");
         ArrayList<String> Postif = traductor.getPostFix(datos);
         
         System.out.println("Verifique que sus datos en Postif sean correctos " + Postif + "\nPresione ENTER para continuar");

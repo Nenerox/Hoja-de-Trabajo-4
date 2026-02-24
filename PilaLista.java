@@ -32,6 +32,6 @@ public class PilaLista<T> implements PilaInterface<T> {
     @Override
     public boolean isEmpty()
     {
-        return lista.isEmpty();
+        return size == 0;
     }
 }

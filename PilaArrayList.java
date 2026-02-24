@@ -2,12 +2,7 @@ import java.util.ArrayList;
 
 public class PilaArrayList<T> implements PilaInterface<T>{
     
-    ArrayList<T> items = new ArrayList<T>();
-
-    public PilaArrayList(ArrayList<T> items)
-    {
-        this.items = items;
-    }
+    private ArrayList<T> items;
     
     public PilaArrayList() {
         this.items = new ArrayList<>();

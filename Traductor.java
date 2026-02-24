@@ -31,7 +31,8 @@ public class Traductor {
                 }
                 pila.pop(); // Eliminar el "("
             } else {
-                while (!pila.isEmpty() && precedence(c) <= precedence(pila.peek().charAt(0))) {
+                while (!pila.isEmpty() && ((c == '^' && precedence(c) < precedence(pila.peek().charAt(0))) || (c != '^' && precedence(c) <= precedence(pila.peek().charAt(0)))))
+                {
                     output.add(pila.pop());
                 }
                 pila.push(String.valueOf(c));
